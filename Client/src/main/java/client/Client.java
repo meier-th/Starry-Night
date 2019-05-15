@@ -2,7 +2,7 @@
 package client;
 
 import com.google.common.collect.HashBiMap;
-import labLib.Star;
+
 import java.io.*;
 import java.net.*;
 import java.awt.BorderLayout;
@@ -206,7 +206,7 @@ public class Client {
             oos.flush();
         } catch (IOException exc) {
         }
-        commThread thrd = new commThread();
+        CommThread thrd = new CommThread();
 
         thrd.start();
         normPepe = new ImageIcon("Resources/Pepe1.jpg");

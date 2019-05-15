@@ -1,6 +1,5 @@
 package server;
 
-import labLib.Star;
 import com.google.gson.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class CollectionControl {
 
     public static void begin() {
         try {
-            String path = "Resources/stars.txt";
+            String path = "stars.txt";
            // System.out.println(path);
             file = new File(path);
         } catch (Exception exc) {
@@ -43,7 +42,7 @@ public class CollectionControl {
 
     public static void finish() {
         if (file==null){
-            file = new File("Resources/stars.txt");
+            file = new File("stars.txt");
         }
         try (FileWriter fw = new FileWriter(file)) {
             for (int i = 0; i < vect.size(); i++) {

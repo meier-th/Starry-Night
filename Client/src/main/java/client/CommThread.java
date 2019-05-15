@@ -11,9 +11,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import labLib.Star;
 
-public class commThread extends Thread{
+public class CommThread extends Thread{
     @Override
     public void run() {
         while (true) {
@@ -156,8 +155,8 @@ public class commThread extends Thread{
                     //System.out.println(oldSt);
                     //System.out.println(newSt);
                     Gson gson = new Gson();
-                    Star old = gson.fromJson(oldSt, labLib.Star.class);
-                    Star news = gson.fromJson(newSt, labLib.Star.class);
+                    Star old = gson.fromJson(oldSt, Star.class);
+                    Star news = gson.fromJson(newSt, Star.class);
                     //System.out.println(old==null);
                     //System.out.println(news==null);
                     Star selected = null;

@@ -1,6 +1,5 @@
 
 package server;
-import labLib.Star;
 import java.util.Comparator;
 
 public class StarComparator implements Comparator<Star> {

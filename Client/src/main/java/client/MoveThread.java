@@ -1,8 +1,7 @@
 package client;
 
-import static javafx.util.Duration.seconds;
+//import static javafx.util.Duration.seconds;
 import javax.swing.JLabel;
-import labLib.Star;
 
 public class MoveThread extends Thread{
     public int wasY;

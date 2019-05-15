@@ -16,7 +16,6 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import labLib.Star;
 
 public class Server {
 
@@ -119,7 +118,7 @@ public class Server {
         logs.setEditable(false);
         logs.setLayout(new FlowLayout());
         logs.setText("Logs:\n");
-        music = new File("Resources/button.wav");
+        music = new File(Server.class.getClassLoader().getResource("button.wav").getFile());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         topSide = new JPanel();
         middle = new JPanel();
@@ -598,13 +597,13 @@ public class Server {
                     Star st = (Star)node.getUserObject();
                     setToolTipText("name: "+st.toString()+", shine: "+String.valueOf(st.getShine())+", location: x: "+String.valueOf(st.getCoordinates()[0])+", y:"+String.valueOf(st.getCoordinates()[1]));
                     if (st.getColour().equals(Color.RED))
-                        setIcon(new ImageIcon("Resources/redSt.png"));
+                        setIcon(new ImageIcon("redSt.png"));
                     else if (st.getColour().equals(Color.WHITE))
-                        setIcon(new ImageIcon("Resources/whtSt.png"));
+                        setIcon(new ImageIcon("whtSt.png"));
                     else if (st.getColour().equals(Color.YELLOW))
-                        setIcon(new ImageIcon("Resources/yellSt.png"));
+                        setIcon(new ImageIcon("yellSt.png"));
                     else 
-                        setIcon(new ImageIcon("Resources/orngSt.png"));
+                        setIcon(new ImageIcon("orngSt.png"));
                 } else {
                     setIcon(UIManager.getIcon("FileView.directoryIcon"));
                     setToolTipText("Directory " +(String)node.getUserObject());
