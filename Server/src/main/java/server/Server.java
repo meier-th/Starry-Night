@@ -10,8 +10,8 @@ import javax.swing.*;
 import java.net.*;
 import java.io.*;
 import javax.swing.event.*;
-import java.util.ArrayList;
 import javax.sound.sampled.AudioInputStream;
+import java.util.ArrayList;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
@@ -47,7 +47,6 @@ public class Server {
     private static JComboBox trfls;
     private static JComboBox trfls2;
     private static DefaultMutableTreeNode underEdit;
-    private static File music;
     public static JTextArea logs;
     public static DefaultListModel listModel;
     private static ListSelectionModel listSelecModel;
@@ -118,7 +117,6 @@ public class Server {
         logs.setEditable(false);
         logs.setLayout(new FlowLayout());
         logs.setText("Logs:\n");
-        music = new File(Server.class.getClassLoader().getResource("button.wav").getFile());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         topSide = new JPanel();
         middle = new JPanel();
@@ -191,11 +189,11 @@ public class Server {
         customButton banAll = makeCommandButton("Ban all");
         banOne.addActionListener((ActionEvent event) -> {
             try {
-                AudioInputStream ais = AudioSystem.getAudioInputStream(music);
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(new BufferedInputStream(Server.class.getResourceAsStream("/button.wav")));
                 Clip clip = AudioSystem.getClip();
-                clip.open(ais);
+                clip.open(audioStream);
                 clip.start();
-            } catch (UnsupportedAudioFileException|IOException|LineUnavailableException exc) {
+            } catch (Exception exc) {
                 System.out.println(exc.getMessage());
             }
             if (usName==null) {
@@ -221,11 +219,11 @@ public class Server {
         });
         banAll.addActionListener((ActionEvent event) -> {
             try {
-        AudioInputStream ais = AudioSystem.getAudioInputStream(music);
-        Clip clip = AudioSystem.getClip();
-        clip.open(ais);
-        clip.start();
-        } catch (UnsupportedAudioFileException|IOException|LineUnavailableException exc) {
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(new BufferedInputStream(Server.class.getResourceAsStream("/button.wav")));
+        	Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+        } catch (Exception exc) {
             System.out.println(exc.getMessage());
         }
             listOfThreads.stream().forEach((thread) -> {
@@ -241,11 +239,11 @@ public class Server {
         });
         deleteButton.addActionListener((ActionEvent ev) -> {
             try {
-        AudioInputStream ais = AudioSystem.getAudioInputStream(music);
-        Clip clip = AudioSystem.getClip();
-        clip.open(ais);
-        clip.start();
-        } catch (UnsupportedAudioFileException|IOException|LineUnavailableException exc) {
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(new BufferedInputStream(Server.class.getResourceAsStream("/button.wav")));
+        	Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+        } catch (Exception exc) {
             System.out.println(exc.getMessage());
         }
             if (editional.isVisible()&&underEdit.equals(currentNode)) {
@@ -285,11 +283,11 @@ public class Server {
         });
         clearButton.addActionListener((ActionEvent ev) -> {
             try {
-        AudioInputStream ais = AudioSystem.getAudioInputStream(music);
-        Clip clip = AudioSystem.getClip();
-        clip.open(ais);
-        clip.start();
-        } catch (UnsupportedAudioFileException|IOException|LineUnavailableException exc) {
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(new BufferedInputStream(Server.class.getResourceAsStream("/button.wav")));
+        	Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+        } catch (Exception exc) {
             System.out.println(exc.getMessage());
         }
             int n = JOptionPane.showConfirmDialog(
@@ -311,11 +309,11 @@ public class Server {
         });
         editButton.addActionListener((ActionEvent ev) -> {
             try {
-        AudioInputStream ais = AudioSystem.getAudioInputStream(music);
-        Clip clip = AudioSystem.getClip();
-        clip.open(ais);
-        clip.start();
-        } catch (UnsupportedAudioFileException|IOException|LineUnavailableException exc) {
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(new BufferedInputStream(Server.class.getResourceAsStream("/button.wav")));
+        	Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+        } catch (Exception exc) {
             System.out.println(exc.getMessage());
         }
             if (currentNode == null) {
@@ -339,11 +337,11 @@ public class Server {
         });
         addButton.addActionListener((ActionEvent event) -> { 
         try {
-        AudioInputStream ais = AudioSystem.getAudioInputStream(music);
-        Clip clip = AudioSystem.getClip();
-        clip.open(ais);
-        clip.start();
-        } catch (UnsupportedAudioFileException|IOException|LineUnavailableException exc) {
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(new BufferedInputStream(Server.class.getResourceAsStream("/button.wav")));
+        	Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+        } catch (Exception exc) {
             System.out.println(exc.getMessage());
         }
             addPressed();
@@ -524,6 +522,7 @@ public class Server {
                 thrd.getOutStr().flush();
                         }
             } catch (Exception exc) {
+		exc.printStackTrace();
                 if (!exc.getMessage().equals("no")) {
                 JOptionPane pane = new JOptionPane("Make sure you input all fields and 'Shine', 'X coordinate' and 'Y coordinate' contain only numeric integer values.");
                 pane.setMessageType(JOptionPane.WARNING_MESSAGE);
@@ -597,13 +596,13 @@ public class Server {
                     Star st = (Star)node.getUserObject();
                     setToolTipText("name: "+st.toString()+", shine: "+String.valueOf(st.getShine())+", location: x: "+String.valueOf(st.getCoordinates()[0])+", y:"+String.valueOf(st.getCoordinates()[1]));
                     if (st.getColour().equals(Color.RED))
-                        setIcon(new ImageIcon("redSt.png"));
+                        setIcon(new ImageIcon(Server.class.getResource("/redSt.png")));
                     else if (st.getColour().equals(Color.WHITE))
-                        setIcon(new ImageIcon("whtSt.png"));
+                        setIcon(new ImageIcon(Server.class.getResource("/whtSt.png")));
                     else if (st.getColour().equals(Color.YELLOW))
-                        setIcon(new ImageIcon("yellSt.png"));
+                        setIcon(new ImageIcon(Server.class.getResource("/yellSt.png")));
                     else 
-                        setIcon(new ImageIcon("orngSt.png"));
+                        setIcon(new ImageIcon(Server.class.getResource("/orngSt.png")));
                 } else {
                     setIcon(UIManager.getIcon("FileView.directoryIcon"));
                     setToolTipText("Directory " +(String)node.getUserObject());

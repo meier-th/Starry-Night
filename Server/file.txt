@@ -1,1 +1,0 @@
-{"visibleEarth":false,"visibleMoon":true,"name":"fdefsdf","Shine":4521,"Xcoord":21,"Ycoord":32,"colour":{"value":-14336,"falpha":0.0}}

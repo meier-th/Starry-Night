@@ -42,13 +42,13 @@ public class CommThread extends Thread{
                     
                     ImageIcon createdStar;
                     if (str.getColour().equals(Color.WHITE)) 
-            createdStar = new ImageIcon("Resources/wc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("wc.jpg"));
         else if (str.getColour().equals(Color.ORANGE)) 
-            createdStar = new ImageIcon("Resources/oc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("oc.jpg"));
         else if (str.getColour().equals(Color.YELLOW))
-            createdStar = new ImageIcon("Resources/yc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("yc.jpg"));
         else
-            createdStar = new ImageIcon("Resources/rc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("rc.jpg"));
                     JLabel move = new JLabel(createdStar);
                     move.setSize(new Dimension(40,40));
                     move.setBackground(new Color(0,0,0));
@@ -87,13 +87,13 @@ public class CommThread extends Thread{
                         
                         ImageIcon createdStar;
                         if (str.getColour().equals(Color.WHITE)) 
-                            createdStar = new ImageIcon("Resources/wc.jpg");
+                            createdStar = new ImageIcon(getClass().getResource("wc.jpg"));
                         else if (str.getColour().equals(Color.ORANGE)) 
-                            createdStar = new ImageIcon("Resources/oc.jpg");
+                            createdStar = new ImageIcon(getClass().getResource("oc.jpg"));
                         else if (str.getColour().equals(Color.YELLOW))
-                            createdStar = new ImageIcon("Resources/yc.jpg");
+                            createdStar = new ImageIcon(getClass().getResource("yc.jpg"));
                         else
-                            createdStar = new ImageIcon("Resources/rc.jpg");
+                            createdStar = new ImageIcon(getClass().getResource("rc.jpg"));
                         JLabel move = new JLabel(createdStar);
                         move.setSize(new Dimension(40,40));
                         move.setBackground(new Color(0,0,0));
@@ -182,13 +182,13 @@ public class CommThread extends Thread{
                         Client.space.repaint();
                         ImageIcon newIc;
                         if (news.getColour().equals(Color.WHITE)) 
-                            newIc = new ImageIcon("Resources/wc.jpg");
+                            newIc = new ImageIcon(getClass().getResource("wc.jpg"));
                         else if (news.getColour().equals(Color.ORANGE)) 
-                            newIc = new ImageIcon("Resources/oc.png");
+                            newIc = new ImageIcon(getClass().getResource("oc.png"));
                         else if (news.getColour().equals(Color.YELLOW))
-                            newIc = new ImageIcon("Resources/yc.jpg");
+                            newIc = new ImageIcon(getClass().getResource("yc.jpg"));
                         else
-                            newIc = new ImageIcon("Resources/rc.png");
+                            newIc = new ImageIcon(getClass().getResource("rc.png"));
                         JLabel move = new JLabel(newIc);
                         move.setSize(new Dimension(40,40));
                         move.setBackground(new Color(0,0,0));
@@ -223,13 +223,13 @@ public class CommThread extends Thread{
                     
                     ImageIcon createdStar;
                     if (str.getColour().equals(Color.WHITE)) 
-            createdStar = new ImageIcon("Resources/wc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("wc.jpg"));
         else if (str.getColour().equals(Color.ORANGE)) 
-            createdStar = new ImageIcon("Resources/oc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("oc.jpg"));
         else if (str.getColour().equals(Color.YELLOW))
-            createdStar = new ImageIcon("Resources/yc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("yc.jpg"));
         else
-            createdStar = new ImageIcon("Resources/rc.jpg");
+            createdStar = new ImageIcon(getClass().getResource("rc.jpg"));
                     JLabel move = new JLabel(createdStar);
                     move.setSize(new Dimension(40,40));
                     move.setBackground(new Color(0,0,0));

@@ -1,9 +1,0 @@
-{"visibleEarth":true,"visibleMoon":true,"name":"Sun","Shine":2100,"Xcoord":0,"Ycoord":0,"colour":{"value":-256,"falpha":0.0}}
-{"visibleEarth":true,"visibleMoon":true,"name":"Alpha","Shine":5000,"Xcoord":210,"Ycoord":123,"colour":{"value":-1,"falpha":0.0}}
-{"visibleEarth":false,"visibleMoon":false,"name":"Centaur","Shine":580,"Xcoord":24,"Ycoord":-58,"colour":{"value":-65536,"falpha":0.0}}
-{"visibleEarth":true,"visibleMoon":false,"name":"myStar","Shine":4785,"Xcoord":105,"Ycoord":61,"colour":{"value":-65536,"falpha":0.0}}
-{"visibleEarth":false,"visibleMoon":false,"name":"344","Shine":444,"Xcoord":-323,"Ycoord":135,"colour":{"value":-256,"falpha":0.0}}
-{"visibleEarth":true,"visibleMoon":true,"name":"jjj","Shine":41,"Xcoord":56,"Ycoord":-164,"colour":{"value":-14336,"falpha":0.0}}
-{"visibleEarth":true,"visibleMoon":true,"name":"q","Shine":500,"Xcoord":0,"Ycoord":0,"colour":{"value":-1,"falpha":0.0}}
-{"visibleEarth":true,"visibleMoon":false,"name":"tyu","Shine":471,"Xcoord":-12,"Ycoord":123,"colour":{"value":-14336,"falpha":0.0}}
-{"visibleEarth":true,"visibleMoon":true,"name":"new","Shine":3421,"Xcoord":10,"Ycoord":-120,"colour":{"value":-256,"falpha":0.0}}

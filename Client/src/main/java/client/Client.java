@@ -50,7 +50,6 @@ public class Client {
     private static JPanel stimpanel;
     public static JButton canc;
     public static JButton reqBomb;
-    private static JLabel state = new JLabel();
     private static boolean movable = false;
     public static JPanel space;
     private static int x;
@@ -152,7 +151,7 @@ public class Client {
         withBart.setVisible(false);
 
         try {
-            backgroundImage = javax.imageio.ImageIO.read(new File("Resources/background.jpeg"));
+            backgroundImage = javax.imageio.ImageIO.read(Client.class.getResourceAsStream("/background.jpeg"));
         } catch (IOException exc) {
         }
 
@@ -209,13 +208,13 @@ public class Client {
         CommThread thrd = new CommThread();
 
         thrd.start();
-        normPepe = new ImageIcon("Resources/Pepe1.jpg");
+        normPepe = new ImageIcon(Client.class.getClassLoader().getResource("/Pepe1.jpg"));
         forPepe = new JLabel(normPepe);
         pepeIsNorm = true;
         pepeIsAlive = true;
-        suicPepe = new ImageIcon("Resources/Pepe_suic.jpg");
-        deadPepe = new ImageIcon("Resources/pepe_dead.png");
-        angryPepe = new ImageIcon("Resources/angry_pepe.jpg");
+        suicPepe = new ImageIcon(Client.class.getClassLoader().getResource("/Pepe_suic.jpg"));
+        deadPepe = new ImageIcon(Client.class.getClassLoader().getResource("/pepe_dead.png"));
+        angryPepe = new ImageIcon(Client.class.getClassLoader().getResource("/angry_pepe.jpg"));
         forSuicide = new JLabel(suicPepe);
 
         forPepe.setPreferredSize(new Dimension(200, 220));
@@ -588,10 +587,7 @@ public class Client {
         bombPanel.setBackground(java.awt.Color.LIGHT_GRAY);
         stimpanel.setBackground(java.awt.Color.LIGHT_GRAY);
         stimpanel.setVisible(false);
-        JLabel bmb = new JLabel("Bomb state:");
-        bmb.setPreferredSize(new Dimension(70, 40));
-        bombPanel.add(bmb);
-        bombPanel.add(state);
+        
         bombPanel.add(reqBomb);
         addPanel.setBackground(java.awt.Color.LIGHT_GRAY);
         addPanel.setPreferredSize(new Dimension(200, 490));
@@ -714,16 +710,16 @@ public class Client {
                 java.awt.Color clrSt;
 
                 if (white.isSelected()) {
-                    createdStar = new ImageIcon("Resources/whtSt.png");
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/whtSt.png"));
                     clrSt = java.awt.Color.WHITE;
                 } else if (orange.isSelected()) {
-                    createdStar = new ImageIcon("Resources/orngSt.png");
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/orngSt.png"));
                     clrSt = java.awt.Color.ORANGE;
                 } else if (yellow.isSelected()) {
-                    createdStar = new ImageIcon("Resources/yellSt.png");
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/yellSt.png"));
                     clrSt = java.awt.Color.YELLOW;
                 } else if (red.isSelected()) {
-                    createdStar = new ImageIcon("Resources/redSt.png");
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/redSt.png"));
                     clrSt = java.awt.Color.RED;
                 } else {
                     JOptionPane pane = new JOptionPane("Choose colour of a new Star.");

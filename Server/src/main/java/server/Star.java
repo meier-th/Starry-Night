@@ -8,12 +8,17 @@ public class Star implements Comparable <Star> {
 	private String name;
 	private boolean visibleFromEarth;
 	private boolean visibleFromMoon;
-	private int[] coordinates;
+	private int[] coordinates = new int[2];
 	private Color colour;
 
 	@Override
 	public int compareTo(Star otherSt) {
 		return this.getShine() - otherSt.getShine();
+	}
+
+	@Override
+	public String toString() {
+		return this.name;
 	}
 
 	public Star(int shine, String name, int x, int y, boolean earth, boolean moon, Color colour) {
