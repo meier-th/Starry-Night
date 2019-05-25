@@ -1,6 +1,5 @@
 package client;
 
-//import static javafx.util.Duration.seconds;
 import javax.swing.JLabel;
 
 public class MoveThread extends Thread{
@@ -16,7 +15,6 @@ public class MoveThread extends Thread{
     public void run () {
         JLabel label = Client.vect.get(str);
         Canvas canv = null;
-        //Canvas label = Client.vect.get(str);
         wasY = label.getY();
         canvY = wasY +5;
         xc = label.getX();
@@ -36,7 +34,6 @@ public class MoveThread extends Thread{
             } catch (InterruptedException exc) {}
             canv.setLocation(canvX, it+5);
             label.setLocation(xc, it);
-            //scanv.setLocation(xc, it);
             it++;
         }
         int loc = label.getY()-1;

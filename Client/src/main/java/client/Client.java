@@ -1,4 +1,3 @@
-//this one
 package client;
 
 import com.google.common.collect.HashBiMap;
@@ -6,11 +5,9 @@ import com.google.common.collect.HashBiMap;
 import java.io.*;
 import java.net.*;
 import java.awt.BorderLayout;
-//import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-//import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -44,7 +41,6 @@ public class Client {
     public static BufferedOutputStream oos;
     public static BufferedInputStream ios;
     public static HashBiMap<Star, JLabel> vect = HashBiMap.create();
-    //public static HashBiMap<Star, Canvas>vect = HashBiMap.create();
     private static ImageIcon createdStar;
     private static JPanel bombPanel;
     private static JPanel stimpanel;
@@ -208,13 +204,13 @@ public class Client {
         CommThread thrd = new CommThread();
 
         thrd.start();
-        normPepe = new ImageIcon(Client.class.getClassLoader().getResource("/Pepe1.jpg"));
+        normPepe = new ImageIcon(Client.class.getClassLoader().getResource("Pepe1.jpg"));
         forPepe = new JLabel(normPepe);
         pepeIsNorm = true;
         pepeIsAlive = true;
-        suicPepe = new ImageIcon(Client.class.getClassLoader().getResource("/Pepe_suic.jpg"));
-        deadPepe = new ImageIcon(Client.class.getClassLoader().getResource("/pepe_dead.png"));
-        angryPepe = new ImageIcon(Client.class.getClassLoader().getResource("/angry_pepe.jpg"));
+        suicPepe = new ImageIcon(Client.class.getClassLoader().getResource("Pepe_suic.jpg"));
+        deadPepe = new ImageIcon(Client.class.getClassLoader().getResource("pepe_dead.png"));
+        angryPepe = new ImageIcon(Client.class.getClassLoader().getResource("angry_pepe.jpg"));
         forSuicide = new JLabel(suicPepe);
 
         forPepe.setPreferredSize(new Dimension(200, 220));
@@ -238,27 +234,14 @@ public class Client {
                 }
                 chngPepeState();
             }
-
             @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
+            public void mousePressed(MouseEvent e) {}
             @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
+            public void mouseReleased(MouseEvent e) {}
             @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
+            public void mouseEntered(MouseEvent e) {}
             @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-
+            public void mouseExited(MouseEvent e) {}
         });
         forSuicide.setPreferredSize(new Dimension(200, 220));
 
@@ -270,27 +253,14 @@ public class Client {
                     killPepe();
                 }
             }
-
             @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
+            public void mousePressed(MouseEvent e) {}
             @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
+            public void mouseReleased(MouseEvent e) {}
             @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
+            public void mouseEntered(MouseEvent e) {}
             @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-
+            public void mouseExited(MouseEvent e) {}
         });
 
         cont = new JPanel(new BorderLayout());
@@ -315,9 +285,7 @@ public class Client {
         frame.pack();
         frame.addWindowListener(new WindowListener() {
             @Override
-            public void windowOpened(WindowEvent e) {
-            }
-
+            public void windowOpened(WindowEvent e) {}
             @Override
             public void windowClosing(WindowEvent e) {
                 try {
@@ -326,26 +294,16 @@ public class Client {
                 } catch (IOException exc) {
                 }
             }
-
             @Override
-            public void windowClosed(WindowEvent e) {
-            }
-
+            public void windowClosed(WindowEvent e) {}
             @Override
-            public void windowIconified(WindowEvent e) {
-            }
-
+            public void windowIconified(WindowEvent e) {}
             @Override
-            public void windowDeiconified(WindowEvent e) {
-            }
-
+            public void windowDeiconified(WindowEvent e) {}
             @Override
-            public void windowActivated(WindowEvent e) {
-            }
-
+            public void windowActivated(WindowEvent e) {}
             @Override
-            public void windowDeactivated(WindowEvent e) {
-            }
+            public void windowDeactivated(WindowEvent e) {}
         });
 
     }
@@ -521,7 +479,7 @@ public class Client {
                                break;
                            } 
                         }
-                //System.out.println("iteration");
+
                 vect.get(st).setVisible(true);
                 sss.setVisible(true);
                 if (eartMatters) {
@@ -710,16 +668,16 @@ public class Client {
                 java.awt.Color clrSt;
 
                 if (white.isSelected()) {
-                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/whtSt.png"));
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("whtSt.png"));
                     clrSt = java.awt.Color.WHITE;
                 } else if (orange.isSelected()) {
-                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/orngSt.png"));
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("orngSt.png"));
                     clrSt = java.awt.Color.ORANGE;
                 } else if (yellow.isSelected()) {
-                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/yellSt.png"));
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("yellSt.png"));
                     clrSt = java.awt.Color.YELLOW;
                 } else if (red.isSelected()) {
-                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("/redSt.png"));
+                    createdStar = new ImageIcon(Client.class.getClassLoader().getResource("redSt.png"));
                     clrSt = java.awt.Color.RED;
                 } else {
                     JOptionPane pane = new JOptionPane("Choose colour of a new Star.");
@@ -763,27 +721,14 @@ public class Client {
                         } catch (IOException exc) {
                         }
                     }
-
                     @Override
-                    public void mousePressed(MouseEvent e) {
-
-                    }
-
+                    public void mousePressed(MouseEvent e) {}
                     @Override
-                    public void mouseReleased(MouseEvent e) {
-
-                    }
-
+                    public void mouseReleased(MouseEvent e) {}
                     @Override
-                    public void mouseEntered(MouseEvent e) {
-
-                    }
-
+                    public void mouseEntered(MouseEvent e) {}
                     @Override
-                    public void mouseExited(MouseEvent e) {
-
-                    }
-
+                    public void mouseExited(MouseEvent e) {}
                 });
 
             } catch (NumberFormatException exc) {

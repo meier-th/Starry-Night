@@ -1,0 +1,2 @@
+{"shine":500,"name":"star","visibleFromEarth":true,"visibleFromMoon":true,"coordinates":[-10,55],"colour":{"value":-1,"falpha":0.0}}
+{"shine":4210,"name":"new","visibleFromEarth":true,"visibleFromMoon":true,"coordinates":[-66,65],"colour":{"value":-14336,"falpha":0.0}}

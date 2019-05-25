@@ -2,14 +2,24 @@ package client;
 
 import java.awt.Color;
 
-public class Star {
+public class Star implements Comparable<Star>{
 
 	private int shine;
 	private String name;
 	private boolean visibleFromEarth;
 	private boolean visibleFromMoon;
-	private int[] coordinates;
+	private int[] coordinates = new int[2];
 	private Color colour;
+
+	@Override
+	public String toString() {
+		return this.name;
+	}
+
+	@Override
+	public int compareTo(Star other) {
+		return this.shine - other.shine;
+	}
 
 	public Star(int shine, String name, int x, int y, boolean earth, boolean moon, Color colour) {
 		this.name = name;

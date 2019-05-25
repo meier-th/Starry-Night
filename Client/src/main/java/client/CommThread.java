@@ -21,7 +21,6 @@ public class CommThread extends Thread{
                 Client.ios.read(forMess);
                 String message = new String(forMess);
                 message = message.trim();
-                //System.out.println(message);
                 if (message.equals("banned")) {
                     JOptionPane pane = new JOptionPane("You are banned, LOL");
                     pane.setMessageType(JOptionPane.WARNING_MESSAGE);
@@ -106,10 +105,8 @@ public class CommThread extends Thread{
                     move.setToolTipText("<html> "+line1+"<br>"+line2+"<br>"+line3+"<br>"+line4+"</html>");
                         Canvas canv = new Canvas(str.getColour(),str.getShine(),move);
                         Client.canvs.add(canv);
-                        //canv.setSize(40,40);
                         move.setLocation(str.getCoordinates()[0]-20+insets.left+450, str.getCoordinates()[1]-20+insets.top+360);
                         canv.setLocation(str.getCoordinates()[0]-15+insets.left+450, str.getCoordinates()[1]-15+insets.top+360);
-                        //Client.vect.put(str, move);
                         Client.space.add(canv);
                         Client.vect.put(str, move);
                     }
@@ -127,7 +124,6 @@ public class CommThread extends Thread{
                     Object obj = oInStr.readObject();
                     Star str = (Star) obj;
                     Star rem = null;
-                    //System.out.println(str==null);
                     for (Star st :Client.vect.keySet()) {
                         if (st.toString().equals(str.toString())&&(st.getCoordinates()[0]==str.getCoordinates()[0])&&(st.getCoordinates()[1]==str.getCoordinates()[1])) 
                             rem = st;
@@ -152,21 +148,14 @@ public class CommThread extends Thread{
                 else if (!message.equals("") && message.charAt(0)=='{') {
                     String oldSt = message.substring(0, message.indexOf("}!{")+1);
                     String newSt = message.substring(oldSt.length()+1, message.length());
-                    //System.out.println(oldSt);
-                    //System.out.println(newSt);
                     Gson gson = new Gson();
                     Star old = gson.fromJson(oldSt, Star.class);
                     Star news = gson.fromJson(newSt, Star.class);
-                    //System.out.println(old==null);
-                    //System.out.println(news==null);
                     Star selected = null;
-                    //System.out.println(Client.vect.size());
                     for (Star st : Client.vect.keySet()) {
-                        //System.out.println(st.toString());
                         if (st.toString().equals(old.toString())&&(st.getCoordinates()[0]==old.getCoordinates()[0])&&(st.getCoordinates()[1]==old.getCoordinates()[1])) {
                             selected = st;
                             break;
-                            //System.out.println("found!");
                         }
                     }
                         Client.space.remove(Client.vect.get(selected));
@@ -199,7 +188,6 @@ public class CommThread extends Thread{
                         Client.vect.put(news, move);
                         canv.setPreferredSize(new Dimension(40,40));
                         canv.setLocation(news.getCoordinates()[0]-15+insets.left+450, news.getCoordinates()[1]-15+insets.top+360);
-                        //Client.vect.put(news, canv);
                         String line1 = "name: "+news.toString()+", shine: "+String.valueOf(news.getShine());
                     String line2 = "Visible from Earth: "+String.valueOf(news.visibleFromEarth());
                     String line3 = "Visible from Moon: "+String.valueOf(news.visibleFromMoon());
@@ -246,7 +234,6 @@ public class CommThread extends Thread{
                     canv.setLocation(str.getCoordinates()[0]-15+insets.left+450, str.getCoordinates()[1]-15+insets.top+360);
                     Client.vect.put(str, move);
                     Client.space.add(canv);
-                    //Client.vect.put(str, move);
                 }
                     
             } catch (IOException|ClassNotFoundException exc) {}
